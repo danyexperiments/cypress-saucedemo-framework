@@ -1,0 +1,15 @@
+{
+  "standardUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "lockedOutUser": {
+    "username": "locked_out_user",
+    "password": "secret_sauce"
+  },
+  "checkoutCustomer": {
+    "firstName": "Alex",
+    "lastName": "Mercer",
+    "postalCode": "10431"
+  }
+}
