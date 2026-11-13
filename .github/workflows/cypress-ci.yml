@@ -1,0 +1,28 @@
+name: Cypress E2E & Network Interception CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headless: true
+
+      - name: Upload Mochawesome HTML Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-mochawesome-report
+          path: cypress/reports/html
+          retention-days: 14
